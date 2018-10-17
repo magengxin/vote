@@ -1,0 +1,75 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="css/tinyImgUpload.css")
+    link(rel="stylesheet" href="css/sign-up.css")
+
+block mainContent
+    .view-index
+        .section
+            h2 宠物天地 爱心家园-寻找安徽最专业宠物馆（B赛区）
+            .activity
+                p.middle
+                    i.iconfont.icon-time
+                    span 报名时间：2018-09-08 08:00
+                p.middle
+                    i.iconfont.icon-time
+                    span 活动开始：2018-09-02 08:00
+                p.middle
+                    i.iconfont.icon-time
+                    span 活动截止：2018-09-08 18:00
+            .sign-form
+                .form-group
+                    .form-control
+                        small *
+                        label 名称
+                        br
+                        input(placeholder="请输入名称")
+                    .form-control
+                        small *
+                        label 上传照片
+                        br
+                        #upload
+                    .form-control
+                        label 简介
+                        br
+                        textarea(placeholder="请输入简介" rows=4 cols=40 style="resize:none" )
+                    .form-control
+                        label 联系电话
+                        br
+                        input(placeholder="请输入联系电话")
+                    .form-control
+                        label 联系地址
+                        br
+                        input(placeholder="请输入联系地址")
+            a#submit(href="javascript:").form-submit 提交
+
+        .dialog
+            .mask
+
+        .footer
+            include includes/footer
+
+block scripts
+    script(src="js/tinyImgUpload.js")
+    script.
+        var options = {
+            path: '/',
+            onSuccess: function (res) {
+                console.log(res);
+            },
+            onFailure: function (res) {
+                console.log(res);
+            }
+        }
+
+        tinyImgUpload('#upload', options);
+        // var upload = tinyImgUpload('#upload', options);
+        // upload()
+        // document.getElementsByClassName('submit')[0].onclick = function (e) {
+        //     upload();
+        // }
+

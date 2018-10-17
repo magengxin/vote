@@ -1,0 +1,124 @@
+@import "common/common.styl"
+@import "common/footer.styl"
+
+a
+    text-decoration none
+    color black
+
+a.btn
+    display: inline-block
+    text-decoration: none
+    text-align: center
+
+$top = px(10)
+$width = px(100)
+.view-index
+    position: relative
+    width 100%
+
+    padding-bottom px(52)
+
+    .section
+        font-size px(14)
+        text-align: center;
+        padding-bottom px(10)
+
+    .main
+        margin()
+        width: 14.25rem
+
+        h2
+            margin $top auto 0
+            padding: px(10)
+            width: px(292);
+
+            font-size: 0.7rem;
+            line-height: px(20);
+            color rgba(0, 0, 0, 1)
+            text-align center
+            font-weight bold
+
+        .business-info
+            overflow hidden
+            margin-top 1.5rem
+            p
+                margin-top 0.7rem
+                line-height: 1.0rem;
+                color: rgba(80, 80, 80, 1);
+
+        .business
+            position relative
+            margin()
+            margin-top 1.4rem
+            width: 13.0rem;
+            height: 4.0rem;
+
+            color: rgba(80, 80, 80, 1);
+            box-shadow: rgba(204, 204, 204, 1) solid px(1);
+            border px(1) solid #bcbbc1
+            text-align left
+            p
+                inblock()
+                width 100%
+                margin-top 1.9rem
+                padding 0 1.2rem
+                line-height: 1.0rem
+                color: rgba(80, 80, 80, 1);
+            span
+                position absolute
+                left 1.0rem
+                top -0.5rem
+                line-height: 1.0rem;
+                color: rgba(128, 128, 128, 1);
+                font-weight: bold;
+                background-color tzransparent
+
+        .vote-info
+            margin()
+            margin-top 1.1rem
+
+            div
+                display: flex
+                width: 100%
+                height 3.25rem
+
+                div
+                    width: 33.333%
+                    line-height 1.0rem
+                    overflow hidden
+
+                    color: rgba(80, 80, 80, 1);
+        .imgs img
+            margin-bottom 0.2rem
+            width: 14.25rem;
+            height: 7.85rem;
+    .tools
+        margin()
+        margin-top 1.9rem
+        position relative
+        width: 18.7rem;
+        height: 2.7rem;
+        background-color: rgba(56, 56, 56, 0.6);
+        a
+            position absolute
+            top 0.6rem
+
+            width: 4.9rem;
+            line-height: 1.5rem;
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 141, 26, 1);
+            box-shadow: rgba(128, 128, 128, 1) solid 0.05rem;
+            border-radius: 0.25rem;
+        a.left
+            left: 1.75rem
+        a.right
+            right: 1.75rem
+        img
+            position absolute
+            left 0
+            right 0
+            margin auto
+            top: -1.2rem
+
+            width: 2.85rem
+            height: 2.6rem

@@ -1,0 +1,87 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="lib/swiper/swiper.min.css")
+    link(rel="stylesheet" href="css/index.css")
+
+block mainContent
+
+    -var imgs=["image/banner1.jpg","image/banner2.jpg","image/banner3.jpg",]
+
+    .view-index
+        .section
+            p 本次活动为公益评选，免费参加！
+            .swiper-container
+                .swiper-wrapper
+                    - var n = 0
+                    while n < 3
+                        - n++
+                        .swiper-slide
+                            img(src=imgs[n - 1])
+                .swiper-pagination
+            h2 宠物天地 爱心家园-寻找安徽最专业宠物馆（B赛区）
+            .vote-info
+                div
+                    div
+                        p 105 <br> 参与选手
+                    div
+                        p 11358 <br> 累计票数
+                    div
+                        p 13658 <br> 访问次数
+                p.info-time.middle#countDown
+                    i.iconfont.icon-time
+                    span 结束倒计时
+                    span.day1 4
+                    span 天
+                    span.hour 10
+                    span 时
+                    span.minute 52
+                    span 分
+                    span.second 15
+                    span 秒
+            .line-name
+                i.iconfont.icon-signUp
+                a(href="sign-up.html") 在线报名
+            .activity
+                p.middle
+                    i.iconfont.icon-time
+                    span 活动开始：2018-09-02 08:00
+                p.middle
+                    i.iconfont.icon-time
+                    span 活动截止：2018-09-08 18:00
+            .player-search
+                input(type="text" placeholder="请输入编号或选手名称" id="ids")
+                input(type="button" value="搜索" id="search")
+            .player-info
+                - var n = 0
+                while n < 4
+                    - n++
+                    .player-main
+                        img(src="image/img" + n + ".jpg" alt="img")
+                        .player-item
+                            p.middle
+                                i.iconfont.icon-author
+                                span.inblock 有家宠物店
+                            p.middle
+                                i.iconfont.icon-heart
+                                span 15号
+                                i.iconfont.icon-number
+                                span 158票
+                p.end 已显示所有选手
+
+        .footer
+            include includes/footer
+
+block scripts
+    script(src="lib/swiper/swiper.min.js")
+    script(src="js/showCountDown.js")
+    script.
+        new Swiper('.swiper-container', {
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination'
+            }
+        })

@@ -1,0 +1,44 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="css/details.css")
+
+block mainContent
+    .view-index
+        .section
+            .main
+                h2 宠物天地 爱心家园-寻找安徽最专业宠物馆（B赛区）
+                .business-info
+                    p.name 有家宠物店
+                    p.number
+                        span 编号：
+                        span 15号
+                .business
+                    p 扬子西路129附近
+                    span 商家信息
+                .vote-info
+                    div
+                        div
+                            p 当前票数 <br> 189票
+                        div
+                            p 票数榜 <br> 第二名
+                        div
+                            p 距上一名差 <br> 50票
+                .imgs
+                    img(src="image/business1.jpg" alt="img")
+                    img(src="image/business2.jpg" alt="img")
+            .tools
+                a(href="javascript:").left 给TA投票
+                a(href="javascript:").right 我要报名
+                img(src="image/bigStar.png" alt="img")
+
+        .dialog
+            .mask
+
+        .footer
+            include includes/footer
+
+block scripts

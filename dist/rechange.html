@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+    <title>投票项目(六安)</title>
+    <script>
+      var browser = {
+          versions: function () {
+              var u = navigator.userAgent, app = navigator.appVersion;
+              return {//移动终端浏览器版本信息
+                  trident: u.indexOf('Trident') > -1, //IE内核
+                  presto: u.indexOf('Presto') > -1, //opera内核
+                  webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                  gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                  mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                  ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                  android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                  iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                  iPad: u.indexOf('iPad') > -1, //是否iPad
+                  webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+              };
+          }(),
+          language: (navigator.browserLanguage || navigator.language).toLowerCase()
+      }
+      
+      // 判断是否是移动端
+      isMobile = (browser.versions.mobile || browser.versions.ios || browser.versions.android ||
+      browser.versions.iPhone || browser.versions.iPad)    
+      
+      if (isMobile) {
+          var docEl = document.documentElement
+          var deviceWidth = docEl.clientWidth;
+          var dpr = window.devicePixelRatio;
+          var scale = 1; // 如果我们做到 dip 和物理像素 1:1
+          var metaEl = document.createElement('meta');
+          metaEl.setAttribute('name', 'viewport');
+          metaEl.setAttribute('content', 'width=device-width, initial-scale=' + scale + ',maximum-scale=1,user-scalable=no');
+          docEl.firstElementChild.appendChild(metaEl);
+      
+          var resize = function() {
+              docEl.style.fontSize = (document.documentElement.clientWidth / 750) * 40 + 'px';
+              docEl.setAttribute('data-dpr', dpr);
+          };
+          window.addEventListener('resize', resize);
+          resize();
+      }
+    </script>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit"><!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait"><!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait"><!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes"><!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true"><!-- UC应用模式 -->
+    <meta name="browsermode" content="application"><!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/rechange.css">
+  </head>
+  <body class="loading" ontouchstart=""><!--[if lt IE 9]>
+    <p class="browserupgrade">抱歉，本网站需要 IE9+ 或现代浏览器。请升级或使用其他浏览器。国产浏览器请使用极速模式，不要使用兼容模式。</p><![endif]-->
+    <div class="toast-container"></div>
+    <div class="container">
+      <div class="view-index">
+        <div class="section">
+          <div class="head">
+            <div class="headPortrait"><img src="image/head-portrait.jpg" alt="头像"></div>
+            <div class="title">
+              <p>为19号 宝龙名宠 送50钻 = 150票</p>
+            </div>
+          </div>
+          <div class="main">
+            <div class="details">
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>10钻</span></a>
+                <p class="star-info"><span>10</span><span>钻=</span><span>30</span><span>票</span></p>
+              </div>
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>50钻</span></a>
+                <p class="star-info"><span>50</span><span>钻=</span><span>150</span><span>票</span></p>
+              </div>
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>100钻</span></a>
+                <p class="star-info"><span>100</span><span>钻=</span><span>300</span><span>票</span></p>
+              </div>
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>300钻</span></a>
+                <p class="star-info"><span>300</span><span>钻=</span><span>900</span><span>票</span></p>
+              </div>
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>500钻</span></a>
+                <p class="star-info"><span>500</span><span>钻=</span><span>1500</span><span>票</span></p>
+              </div>
+              <div class="star"><a class="star-item" href="javascript:"><img src="image/star.png" alt="img"><span>1000钻</span></a>
+                <p class="star-info"><span>1000</span><span>钻=</span><span>3000</span><span>票</span></p>
+              </div>
+            </div>
+            <div class="star-form">
+              <div class="star-control">
+                <label>钻石数量(可输入其他数量)：</label>
+                <input placeholder="请输入钻石数量">
+                <p><span>实付款：</span><span>¥ 50.00</span></p>
+              </div>
+            </div><a href="javascript:" id="submit">充值</a>
+          </div>
+        </div>
+        <div class="footer"><a href="index.html">
+            <div><i class="iconfont icon-home"></i><span>首页</span></div></a><a href="prize.html">
+            <div><i class="iconfont icon-prize"></i><span>奖品</span></div></a><a href="sign-up.html">
+            <div><i class="iconfont icon-signUp"></i><span>报名</span></div></a><a href="rank.html">
+            <div><i class="iconfont icon-rank"></i><span>排名</span></div></a>
+        </div>
+      </div>
+    </div>
+    <script src="lib/jquery-1.12.4.min.js"></script>
+  </body>
+</html>

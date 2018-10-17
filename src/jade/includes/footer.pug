@@ -1,0 +1,9 @@
+- var data = [ { href:"index.html",class:"home",name:"首页" }, { href:"prize.html",class:"prize",name:"奖品" }, { href:"sign-up.html",class:"signUp",name:"报名" }, { href:"rank.html",class:"rank",name:"排名" } ]
+
+- var n = 0
+while n < data.length
+    - n++
+    a(href=data[n-1].href)
+        div
+            i(class="iconfont icon-" + data[n-1].class)
+            span=data[n-1].name

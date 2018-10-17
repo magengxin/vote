@@ -1,0 +1,21 @@
+{
+    "name": "vote",
+    "version": "0.0.1",
+    "description": "vote",
+    "main": "index.js",
+    "scripts": {},
+    "config": {
+        "active": true,
+        "port": 8082,
+        "nojade": false,
+        "dist": "D:/phpStudy/WWW/test/front-projects-rem/projects/vote/dist2",
+        "spriteNames": [
+            "sprite",
+            "sprite-1",
+            "sprite-2"
+        ]
+    },
+    "author": "gengxin",
+    "license": "ISC",
+    "devDependencies": {}
+}

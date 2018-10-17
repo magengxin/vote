@@ -1,0 +1,49 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="css/rechange.css")
+
+block mainContent
+
+    -var headPortrait='image/head-portrait.jpg'
+    -var star='image/star.png'
+
+    .view-index
+        .section
+            .head
+                .headPortrait
+                    img(src=headPortrait, alt="头像")
+                .title
+                    p 为19号 宝龙名宠 送50钻 = 150票
+            .main
+                .details
+                    - var arr = [10,50,100,300,500,1000]
+                    - var n = 0
+                    while n < 6
+                        - n++
+                        .star
+                            a(href="javascript:").star-item
+                                img(src=star alt="img")
+                                span=arr[n-1]
+                                    | 钻
+                            p.star-info
+                                span=arr[n-1]
+                                span 钻=
+                                span=arr[n-1]*3
+                                span 票
+                .star-form
+                    .star-control
+                        label 钻石数量(可输入其他数量)：
+                        input(placeholder="请输入钻石数量")
+                        p
+                            span 实付款：
+                            span ¥ 50.00
+                a(href='javascript:')#submit 充值
+
+        .footer
+            include includes/footer
+
+block scripts

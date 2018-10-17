@@ -1,0 +1,53 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="css/rank.css")
+
+block mainContent
+
+    .view-index
+        .section
+            h2 宠物天地 爱心家园-寻找安徽最专业宠物馆（B赛区）
+            .vote-info
+                div
+                    div
+                        p 105 <br> 参与选手
+                    div
+                        p 11358 <br> 累计票数
+                    div
+                        p 13658 <br> 访问次数
+                p.info-time.middle#countDown
+                    i.iconfont.icon-time
+                    span 结束倒计时
+                    span.day1 4
+                    span 天
+                    span.hour 10
+                    span 时
+                    span.minute 52
+                    span 分
+                    span.second 15
+                    span 秒
+            .vote-title
+                h3 投票拍行榜
+            ul.vote-list
+                - var n = 0
+                while n < 6
+                    - n++
+                    li.vote-item
+                        small=n
+                        img(src="image/small.png" alt="img")
+                        div.vote-item-word
+                            p
+                                span 15号：有家宠物店
+                                span 1355票
+                            p 你说啥你熟睡
+            p.end 已显示所有选手
+
+        .footer
+            include includes/footer
+
+block scripts
+    script(src="js/showCountDown.js")

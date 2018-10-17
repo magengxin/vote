@@ -1,0 +1,60 @@
+extends ./includes/layout
+
+block checkOs
+    include ./includes/auto-resizer
+
+block styles
+    link(rel="stylesheet" href="lib/swiper/swiper.min.css")
+    link(rel="stylesheet" href="css/prize.css")
+
+block mainContent
+
+    -var imgs=["image/banner1.jpg","image/banner2.jpg","image/banner3.jpg",]
+
+    .view-index
+        .section
+            p 本次活动为公益评选，免费参加！
+            .swiper-container
+                .swiper-wrapper
+                    - var n = 0
+                    while n < 3
+                        - n++
+                        .swiper-slide
+                            img(src=imgs[n - 1])
+                .swiper-pagination
+            h2 宠物天地 爱心家园-寻找安徽最专业宠物馆（B赛区）
+            .activity
+                p
+                    i.iconfont.icon-time
+                    span 报名时间：2018-09-08 08:00
+                p
+                    i.iconfont.icon-time
+                    span 活动开始：2018-09-02 08:00
+                p
+                    i.iconfont.icon-time
+                    span 活动截止：2018-09-08 18:00
+            .activity-info
+                h3 活动介绍
+                p 
+                    span 投票主题：
+                    span.inblock 寻找安徽最专业宠物店
+                p 
+                    span 投票选手：
+                    span.inblock 安徽本地宠物店
+                p 
+                    span 投票主题：
+                    span 在您满意的选手下方投票，并根据得票最多的选手为获得当地最专业宠物店，通过公众平
+                img(src="image/prize.jpg" alt="img")
+
+        .footer
+            include includes/footer
+
+block scripts
+    script(src="lib/swiper/swiper.min.js")
+    script.
+        new Swiper('.swiper-container', {
+            autoplay: true,
+            pagination: {
+                el: '.swiper-pagination'
+            }
+        })
